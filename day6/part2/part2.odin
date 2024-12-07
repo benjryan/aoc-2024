@@ -49,6 +49,7 @@ main :: proc() {
     width := len(table[0])
     visited: map[Key]struct{}
     obstructions: map[int]struct{}
+    o: map[[2]int]struct{}
     dir := [2]int{0,-1}
     pos: [2]int
     for row, y in table {
