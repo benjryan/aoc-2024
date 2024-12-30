@@ -1,3 +1,5 @@
+#include <math.h>
+
 size_t parse_size(String s) {
     size_t result = 0;
     for (size_t i = 0; i < s.len; i++) {
@@ -35,8 +37,11 @@ int parse_int(String s) {
 }
 
 size_t count_digits(size_t n) {
-    char buffer[128];
-    int result = sprintf(buffer, "%zu", n);
+    size_t result = 0;
+    while (n > 0) {
+        n /= 10;
+        result++;
+    }
     return result;
 }
 
